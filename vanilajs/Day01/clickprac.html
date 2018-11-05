@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="hphk">I can tell.</h1>
+    <div>
+        <a href="#" id="a">Who will get hired?</a>
+    </div>
+    <div>
+        <a href="#" id="b">Where he will go?</a>
+    </div>
+
+    <script>
+        const anchor = document.querySelector('#a');
+        anchor.addEventListener('click', function(){
+            const text = document.querySelector('#a')
+            text.innerHTML =  'HanYeoul Kim!'
+        });
+        
+        const anchor2 = document.querySelector('#b')
+        anchor2.addEventListener('click', () => {
+            const text2 = document.querySelector('#b')
+            text2.innerHTML = 'MiraeAssetsDaewoo!'
+        });
+
+
+    </script>
+</body>
+</html>
