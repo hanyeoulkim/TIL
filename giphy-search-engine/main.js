@@ -28,7 +28,7 @@ inputArea.addEventListener('keyup', (e)=>{
 // 2. API 를 활용해 data 를 받는다. 그리고 가공한다.
 const apiKey = 'RwcZAWb7yDl7cxu0A0YZqVtS7NbTgiTK';
 //날 증명하는 것. 나 이런 사람이에요! 정보 요청할 자격이 있어요!
-let keyword = 'rainbow';
+let keyword = 'fuckedup';
 const url = `http://api.giphy.com/v1/gifs/search?q=${keyword}&api_key=${apiKey}`;
 
 //Ajax request
@@ -51,10 +51,15 @@ GiphyAjaxCall.addEventListener('load', (e) => {
 
 // 3. GIF 파일들을 index.html 에 밀어 넣는다.
 const pushToDom = (parsedData) => {
-    console.log(parsedData.data[0].images.fixed_height.url);
     const resultArea = document.querySelector('#result-area');
-    const imageURL = parsedData.data[0].images.fixed_height.url;
-    resultArea.innerHTML = `<img src="${imageURL}" alt='love' />`;
+
+    console.log(parsedData.data[0].images.fixed_height.url);
+    const DataSet = parsedData.data;
+    DataSet.forEach((imageData) => {
+        let imgURL = imageData.images.fixed_height.url;
+        let alt = imageData.title;
+        resultArea.innerHTML += `<img src="${imgURL}" alt='${alt}' />`;
+    });
     //console.log(resultArea)
     
 
