@@ -1,4 +1,4 @@
-const tvArea = document.querySelector("#js-tv-area");
+const tvArea = document.querySelector("#tv-area");
 
 const animateTV = () => {
   const keywords = [
