@@ -28,15 +28,34 @@ inputArea.addEventListener('keyup', (e)=>{
 // 2. API 를 활용해 data 를 받는다. 그리고 가공한다.
 const apiKey = 'RwcZAWb7yDl7cxu0A0YZqVtS7NbTgiTK';
 //날 증명하는 것. 나 이런 사람이에요! 정보 요청할 자격이 있어요!
-let keyword = 'sexy';
-const url = `api.giphy.com/v1/gifs/search?q=${keyword}&api_key=${apiKey}`;
-console.log(url);
+let keyword = 'rainbow';
+const url = `http://api.giphy.com/v1/gifs/search?q=${keyword}&api_key=${apiKey}`;
 
+//Ajax request
+//요청을 비동기로 보내보자.
+const GiphyAjaxCall = new XMLHttpRequest();
+GiphyAjaxCall.open('GET', url);
+//야, 주소를 열어서 get으로 url열고
+GiphyAjaxCall.send();
+//요청을 보내.
+GiphyAjaxCall.addEventListener('load', (e) => {
+    const rawData = e.target.response;
+    //console.log(rawData);
+    //자, rawData는 아직 브라우저가 처리를 못한다. 얘를 처리할 수 있게 처리해보자.
+    //console.log(JSON.parse(rawData));
+    const parsedData = JSON.parse(rawData)
+    pushToDom(parsedData);
 
+});
+//응답으로 load가 완료되었을 때 
 
 // 3. GIF 파일들을 index.html 에 밀어 넣는다.
-const pushToDom = (data) => {
+const pushToDom = (parsedData) => {
+    console.log(parsedData.data[0].images.fixed_height.url);
     const resultArea = document.querySelector('#result-area');
-    resultArea.innerHTML = data;
-    console.log(resultArea)
+    const imageURL = parsedData.data[0].images.fixed_height.url;
+    resultArea.innerHTML = `<img src="${imageURL}" alt='love' />`;
+    //console.log(resultArea)
+    
+
 }
