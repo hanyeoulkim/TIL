@@ -1,32 +1,58 @@
 <!doctype html>
 <html>
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
 <head>
-	<meta charset='utf-8'>
+    <meta charset='utf-8'>
     <meta name='viewport' content='width=device-width, initial-scale=1.0'>
     <title>SoundCloud Player</title>
     <link rel='stylesheet' href='styles/semantic.min.css'>
     <link rel='stylesheet' href='styles/main.css'>
+    <style>
+        body {
+            background: black;
+        }
+        .img-center {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+      }
+    </style>
+
 </head>
+
 <body id="soundcloud-player">
 
-<div class="ui container col">
-    <div class="col-left js-playlist">
-        <div class="inner">
-            <!--Playstack-->
-        </div>
-    </div>
-    <div class="col-right">
-        <div class="main">
 
-            <div class="ui massive icon input">
-                <input type="text" placeholder="Search for a song or artist..." class="js-search input-search">
-                <i class="search icon js-submit"></i>
+    <div class="ui container col">
+        <div class="col-left">
+            <button id="js-reset" style="font-family: 'Roboto Mono', monospace;" class="fluid ui inverted purple button">Reset</button>
+        <!-- 곡이 쌓일 곳 -->
+            <div id="js-playlist">
+                <div class="inner">
+                <!--Playstack-->
+                </div>
             </div>
+        </div>
 
-            <div id="js-search-results" class="search-results ui cards">
-                
-                <!-- BEGIN CARD -->
-                <!-- <div class="card">
+        <div class="col-right">
+            <div class="main">
+                <div id="tv-area" class="container img-center">
+
+                </div>
+                <div>
+                    <h2 style="text-align: center; font-family: 'Roboto Mono', monospace;"><span style="color: yellow;">Han's</span> <span style="color: white;">Music
+                        </span><span style="color: red;">Search</span><span style="color: white;"> System</span></h2>
+                </div>
+
+                <div class="ui massive icon input">
+                    <input type="text" style="font-family: 'Roboto Mono', monospace;" placeholder="Search for a song or artist..." class="js-search input-search">
+                    <i class="search icon js-submit"></i>
+                </div>
+
+                <div id="js-search-results" class="search-results ui cards">
+
+                    <!-- BEGIN CARD -->
+                    <!-- <div class="card">
                     <div class="image">
                         <img class="image_img" src="http://www.placekitten.com/290/290">
                     </div>
@@ -40,16 +66,18 @@
                         <span>Add to playlist</span>
                     </div>
                 </div> -->
-                <!-- END CARD -->
-        
+                    <!-- END CARD -->
+
+                </div>
             </div>
         </div>
     </div>
-</div>
 
-<!--Sound Cloud Script 시작-->
-<script src="https://connect.soundcloud.com/sdk/sdk-3.3.0.js"></script>
-<script src='javascript/semantic.min.js'></script>
-<script src="javascript/main.js"></script>
+    <!--Sound Cloud Script 시작-->
+    <script src="https://connect.soundcloud.com/sdk/sdk-3.3.0.js"></script>
+    <script src='javascript/semantic.min.js'></script>
+    <script src="javascript/main.js"></script>
+    <script src="javascript/gif_tv.js"></script>
 </body>
+
 </html>
