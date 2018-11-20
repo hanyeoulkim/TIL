@@ -1,12 +1,53 @@
-import React from 'react';
+import React, {Fragment} from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import * as serviceWorker from './serviceWorker';
+import CommentDetail from './CommentDetail';
+import Card from './card';
+import faker from "faker";
 
-ReactDOM.render(<App />, document.getElementById('root'));
+const App = () => {
+    return (
+    <Fragment>
+        <div className="container-fluid" style={{backgroundColor: 'black', color: "white", textAlign: 'center'}}>
+            <h1>Activit'ng</h1>
+            <div className="row" style={{backgroundColor: 'black', color: 'white'}}>
+                <div className="col-sm-2">Activit'ng</div>
+                <div className="col-sm-2">ClubSchedule</div>
+                <div className="col-sm-2">Today's Match</div>
+                <div className="col-sm-2">Subscription</div>
+                <div className="col-sm-2">Dev Team</div>
+                <div className="col-sm-2">FAQ</div>
+            </div>
+            <div className="ui container comments">
+                <Card>
+                    <CommentDetail
+                    author={faker.name.firstName()}
+                    time={faker.date.recent().toLocaleString()}
+                    body={faker.lorem.sentence()}
+                    avatar={faker.image.avatar()}
+                    />
+                </Card>
+                <Card>
+                    <CommentDetail
+                    author={faker.name.firstName()}
+                    time={faker.date.recent().toLocaleString()}
+                    body={faker.lorem.sentence()}
+                    avatar={faker.image.avatar()}
+                    />
+                </Card>
+                <Card>
+                    <CommentDetail
+                    author={faker.name.firstName()}
+                    time={faker.date.recent().toLocaleString()}
+                    body={faker.lorem.sentence()}
+                    avatar={faker.image.avatar()}
+                    />
+                </Card>
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: http://bit.ly/CRA-PWA
-serviceWorker.unregister();
+            </div>
+        </div>
+    
+    </Fragment>
+    )
+};
+
+ReactDOM.render(<App />, document.querySelector('#root'));
