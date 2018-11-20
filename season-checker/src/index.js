@@ -1,6 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import SeasonDisplay from "./SeasonDisplay";
+import Spinner from "./Spinner";
+import Denied from "./Denied";
 
 // const App = () => {
 
@@ -18,27 +20,35 @@ import SeasonDisplay from "./SeasonDisplay";
 
 class App extends React.Component {
   //상속받고 있는 Component 함수를 그대로 쓰겠다. 라는 뜻. 클래스를 쓴다면 이 컨스트럭터는 무조건 쓰는 구문이므로 외우자.
-//   constructor(props) {
-//     super(props);
-//   }
-    //데이터의 초기화
-    
-    state = {
-      lat: null,
-      errorMessage: '',
-    };
+  //   constructor(props) {
+  //     super(props);
+  //   }
+  //데이터의 초기화
 
-  render() {
+  state = {
+    lat: null,
+    errorMessage: ""
+  };
+
+  renderContent() {
     //사용자 차단 시
     if (this.state.errorMessage && !this.state.lat) {
-      return <div>Error: {this.state.errorMessage} </div>;
+      return <Denied message="We cannot approach to you bcuz you denied permission." />;
     }
     //사용자 허용 시
     if (!this.state.errorMessage && this.state.lat) {
-      return (<SeasonDisplay lat={this.state.lat} />);
+      return <SeasonDisplay lat={this.state.lat} />;
     }
     //아무것도 안눌렀을 시
-    return <div>Loading...</div>;
+    return <Spinner message="Where are you?" />;
+  }
+
+  render() {
+      return (
+          <div>
+              {this.renderContent()}
+          </div>
+      )
   }
 
   componentDidMount() {
