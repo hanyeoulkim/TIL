@@ -4,12 +4,14 @@ import './Navigation.css';
 export default function Navigation() {
   return (
     <div className="row">
-      <div className="col-sm-2"><a href="#">Activit'ng</a></div>
-      <div className="col-sm-2"><a href="#">Club Schedule</a></div>
-      <div className="col-sm-2"><a href="#">Today's Match</a></div>
-      <div className="col-sm-2"><a href="#">Subscription</a></div>
-      <div className="col-sm-2"><a href="#">Dev Team</a></div>
-      <div className="col-sm-2"><a href="#">FAQ</a></div>
+      <ul className="nav nav-pills nav-justified">
+        <li><a href="#">Activit'ng</a></li>
+        <li><a href="#">Club Schedule</a></li>
+        <li><a href="#">Today's Match</a></li>
+        <li><a href="#">Subscription</a></li>
+        <li><a href="#">Dev Team</a></li>
+        <li><a href="#">FAQ</a></li>
+      </ul>
     </div>
   );
 }
