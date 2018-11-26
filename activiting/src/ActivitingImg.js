@@ -5,18 +5,18 @@ import "./ActivitingImg.css";
 
 export default function ActivitingImg() {
   return (
-    <Carousel>
+    <Carousel infiniteLoop autoPlay emulateTouch showStatus={false} showThumbs={false} centerMode centerSlidePercentage={50} >
     <div>
-      <img src='img/main-body.jpg' alt="test1" />
-      <p className="legend">test</p>
+      <img src='img/test1.jpg' alt="test1" className="imgslides" />
+      </div>
+    <div>
+      <img src='img/test2.jpg' alt="test2" className="imgslides" />
     </div>
     <div>
-      <img src='img/main-top.jpg' alt="test2"/>
-      <p className="legend">test2</p>
+      <img src='img/test3.jpeg' alt="test3" className="imgslides" />
     </div>
     <div>
-      <img src='img/test.png' alt="test3" />
-      <p className="legend">test3</p>
+      <img src='img/test4.png' alt="test4" className="imgslides" />
     </div>
   </Carousel>
   )

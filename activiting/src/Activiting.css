@@ -1,10 +1,10 @@
 .body-full-overlay {
     position: relative;
     padding: 40px;
-    background-image: url('./img/main-body.jpg');
+    background-image: url('img/main-body.jpg');
     background-size: cover;
     z-index: -1;
-    height: 55vh;
+    height: 80vh;
 }
 
 .body-full-overlay:after{
@@ -28,13 +28,8 @@
 .col-sm-8 {
     background-color: black;
     color: aliceblue;
-    height: 50vh;
+    height: 60vh;
     z-index: 1;
-}
-
-.col-sm-1 {
-    
-    color: white;
 }
 
 .col-sm-4 {
