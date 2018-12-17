@@ -1,0 +1,12 @@
+.ui.container {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+.col-sm-8 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 7vw;
+}

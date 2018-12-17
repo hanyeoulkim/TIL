@@ -1,8 +1,9 @@
 .carousel {
     background-color: black;
-    height: 60vh;
 }
 
 div > .imgslides {
-    height: 250px;
+    display: block;
+    max-height: 300px;
+    height: auto;
 }

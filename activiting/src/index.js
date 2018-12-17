@@ -5,6 +5,10 @@ import Header from './Header';
 import Activiting from './Activiting';
 import ActivitingImg from './ActivitingImg';
 import Login from './Login';
+import ClubSchedule from './ClubSchedule';
+import Tags from './component/Tags';
+import Cards from './component/Cards';
+import Signup from './Signup';
 
 const App = () => {
     return (
@@ -14,6 +18,10 @@ const App = () => {
         {/* <ActivitingImg /> */}
         {/* <Activiting /> */}
         <Login />
+        {/* <ClubSchedule /> */}
+        {/* <Tags /> */}
+        {/* <Cards /> */}
+        {/* <Signup /> */}
     </Fragment>
     )
 };
