@@ -1,9 +1,16 @@
 const Router = require('koa-router');
 
-const api = new Router();
+const books = new Router();
+const booksCtrl = require('./books.controller');
 
-api.get('/books', (ctx, next) => {
-    ctx.body = 'GET ' + ctx.request.path;
-});
+const handler = (ctx, next) => {
+    ctx.body = `${ctx.request.method} ${ctx.request.path}`;
+};
 
-module.exports = api;
+books.get('/', booksCtrl.list);
+books.post('/', booksCtrl.create);
+books.delete('/', booksCtrl.delete);
+books.put('/', booksCtrl.replace);
+books.patch('/', booksCtrl.update);
+
+module.exports = books;
